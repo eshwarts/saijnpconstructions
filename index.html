@@ -1,184 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sai JNP Constructions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --charcoal:#1c1c1a;
+    --concrete:#c9c4ba;
+    --offwhite:#f2f0ea;
+    --steel:#2f4858;
+    --safety:#e8a33d;
+    --line:rgba(28,28,26,0.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--offwhite);
+    color:var(--charcoal);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+  }
+  h1,h2,h3{font-family:'Archivo Black',sans-serif;text-transform:uppercase;letter-spacing:0.5px;}
+  .mono{font-family:'IBM Plex Mono',monospace;letter-spacing:1px;}
+  a{color:inherit;}
 
-  <title>Sai JNP Constructions</title>
+  /* ---------- Header ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:18px 6%;
+    background:rgba(242,240,234,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .logo{font-family:'Archivo Black',sans-serif;font-size:1.4rem;letter-spacing:0.5px;}
+  .logo span{color:var(--safety);}
+  nav a{
+    font-family:'IBM Plex Mono',monospace;font-size:0.78rem;
+    margin-left:28px;text-decoration:none;text-transform:uppercase;letter-spacing:1px;
+    border-bottom:2px solid transparent;padding-bottom:2px;
+    transition:border-color .2s;
+  }
+  nav a:hover{border-color:var(--safety);}
+  .nav-toggle{display:none;}
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  /* ---------- Hero ---------- */
+  .hero{
+    min-height:100vh;
+    display:flex;flex-direction:column;justify-content:center;
+    padding:120px 6% 60px;
+    position:relative;
+    background:
+      linear-gradient(var(--offwhite) 0 0),
+      repeating-linear-gradient(0deg, var(--line) 0 1px, transparent 1px 80px),
+      repeating-linear-gradient(90deg, var(--line) 0 1px, transparent 1px 80px);
+    overflow:hidden;
+  }
+  .brand-highlight{
+    display:inline-block;
+    background:var(--safety);color:var(--charcoal);
+    font-size:0.8rem;font-weight:600;letter-spacing:2px;
+    padding:8px 16px;margin-bottom:24px;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;color:var(--steel);
+    font-size:0.85rem;letter-spacing:2px;margin-bottom:18px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--safety);display:inline-block;}
+  .hero h1{
+    font-size:clamp(2.4rem,7vw,5.2rem);
+    line-height:0.98;
+    max-width:14ch;
+  }
+  .hero h1 em{
+    font-style:normal;color:var(--steel);
+    -webkit-text-stroke:1.5px var(--steel);
+    color:transparent;
+  }
+  .hero p.sub{
+    max-width:520px;margin-top:26px;font-size:1.05rem;color:#42423e;
+  }
+  .hero-cta{margin-top:38px;display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;padding:14px 28px;
+    font-family:'IBM Plex Mono',monospace;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;
+    text-decoration:none;transition:transform .15s, background .2s;
+  }
+  .btn-primary{background:var(--charcoal);color:var(--offwhite);}
+  .btn-primary:hover{background:var(--steel);}
+  .btn-outline{border:1.5px solid var(--charcoal);}
+  .btn-outline:hover{background:var(--charcoal);color:var(--offwhite);}
 
-    body {
-      font-family: Arial, sans-serif;
-      color: #222;
-    }
+  .hero-stats{
+    display:flex;gap:48px;margin-top:64px;flex-wrap:wrap;
+    border-top:1px solid var(--line);padding-top:28px;
+  }
+  .stat-num{font-family:'Archivo Black',sans-serif;font-size:2rem;color:var(--steel);}
+  .stat-label{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;text-transform:uppercase;letter-spacing:1px;color:#5a5a55;}
 
-    header {
-      background: #111;
-      color: white;
-      padding: 20px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+  /* ---------- Section shell ---------- */
+  section{padding:110px 6%;}
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .tag{
+    font-family:'IBM Plex Mono',monospace;font-size:0.78rem;letter-spacing:2px;
+    color:var(--safety);text-transform:uppercase;display:block;margin-bottom:14px;
+  }
+  .section-head h2{font-size:clamp(1.8rem,4vw,2.8rem);}
 
-    header h2 {
-      font-size: 24px;
-    }
+  /* ---------- About ---------- */
+  .about{background:var(--charcoal);color:var(--offwhite);}
+  .about .tag{color:var(--safety);}
+  .about-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;}
+  .about-grid p{color:#d8d5cd;margin-bottom:18px;max-width:52ch;}
+  .about-list{list-style:none;border-top:1px solid rgba(242,240,234,0.18);}
+  .about-list li{
+    display:flex;justify-content:space-between;
+    padding:18px 0;border-bottom:1px solid rgba(242,240,234,0.18);
+    font-family:'IBM Plex Mono',monospace;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.5px;
+  }
+  .about-list li span:last-child{color:var(--safety);}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 25px;
-    }
+  /* ---------- Services ---------- */
+  .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);}
+  .service-card{background:var(--offwhite);padding:34px 28px;}
+  .service-num{font-family:'IBM Plex Mono',monospace;color:var(--safety);font-size:0.8rem;margin-bottom:22px;display:block;}
+  .service-card h3{font-size:1.05rem;margin-bottom:10px;letter-spacing:0.3px;}
+  .service-card p{font-size:0.92rem;color:#4c4c47;}
 
-    .hero {
-      min-height: 80vh;
-      background: #252525;
-      color: white;
+  /* ---------- Projects ---------- */
+  .projects{background:var(--offwhite);}
+  .project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;}
+  .project-card{
+    border:1px solid var(--line);background:#fff;
+    display:flex;flex-direction:column;
+  }
+  .project-thumb{
+    aspect-ratio:4/3;
+    background:
+      repeating-linear-gradient(45deg, #e4e0d6 0 2px, #ece9e1 2px 14px);
+    display:flex;align-items:center;justify-content:center;
+    position:relative;border-bottom:1px solid var(--line);
+  }
+  .project-thumb span{
+    font-family:'IBM Plex Mono',monospace;font-size:0.75rem;letter-spacing:1px;
+    text-transform:uppercase;color:#83807a;background:rgba(242,240,234,0.9);
+    padding:6px 12px;border:1px dashed #a7a39a;
+  }
+  .project-body{padding:22px 24px;}
+  .project-body .tag{margin-bottom:8px;font-size:0.7rem;}
+  .project-body h3{font-size:1.05rem;text-transform:none;font-family:'Inter',sans-serif;font-weight:700;}
+  .project-body p{color:#5a5a55;font-size:0.9rem;margin-top:8px;}
 
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+  /* ---------- Why us ---------- */
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:36px;}
+  .why-card h3{font-size:1rem;margin-bottom:10px;color:var(--steel);}
+  .why-card p{font-size:0.92rem;color:#4c4c47;}
+  .why-card .num{font-family:'Archivo Black',sans-serif;font-size:1.6rem;color:var(--concrete);-webkit-text-stroke:1px var(--charcoal);color:transparent;display:block;margin-bottom:14px;}
 
-      text-align: center;
-      padding: 40px 20px;
-    }
+  /* ---------- Contact ---------- */
+  .contact{background:var(--steel);color:var(--offwhite);}
+  .contact .tag{color:var(--safety);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+  .contact-info p{color:#dce3e7;margin-bottom:22px;max-width:44ch;}
+  .contact-detail{margin-bottom:16px;font-family:'IBM Plex Mono',monospace;font-size:0.9rem;}
+  .contact-detail span{display:block;font-size:0.7rem;letter-spacing:1px;color:var(--safety);text-transform:uppercase;margin-bottom:4px;}
+  form{display:flex;flex-direction:column;gap:14px;}
+  input,textarea{
+    background:transparent;border:1px solid rgba(242,240,234,0.4);
+    padding:14px 16px;color:var(--offwhite);font-family:'Inter',sans-serif;font-size:0.92rem;
+  }
+  input::placeholder,textarea::placeholder{color:rgba(242,240,234,0.55);}
+  textarea{resize:vertical;min-height:100px;}
+  form .btn-primary{background:var(--safety);color:var(--charcoal);align-self:flex-start;font-weight:600;}
+  form .btn-primary:hover{background:var(--offwhite);}
 
-    .hero h1 {
-      font-size: 55px;
-      margin-bottom: 20px;
-    }
+  footer{
+    padding:26px 6%;background:var(--charcoal);color:#9a988f;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    font-family:'IBM Plex Mono',monospace;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.5px;
+  }
 
-    .hero p {
-      font-size: 20px;
-      margin-bottom: 30px;
-    }
-
-    .button {
-      display: inline-block;
-      background: #d89b2b;
-      color: white;
-      padding: 14px 28px;
-      text-decoration: none;
-      border-radius: 4px;
-      margin: 5px;
-    }
-
-    .services {
-      padding: 70px 8%;
-      text-align: center;
-    }
-
-    .services h2 {
-      font-size: 36px;
-      margin-bottom: 40px;
-    }
-
-    .service-container {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      flex-wrap: wrap;
-    }
-
-    .service {
-      width: 250px;
-      padding: 30px;
-      background: #f3f3f3;
-      border-radius: 8px;
-    }
-
-    footer {
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 25px;
-    }
-
-    @media (max-width: 700px) {
-      nav {
-        display: none;
-      }
-
-      .hero h1 {
-        font-size: 38px;
-      }
-    }
-  </style>
+  @media (max-width:800px){
+    nav{display:none;}
+    .about-grid,.contact-grid{grid-template-columns:1fr;}
+    .hero-stats{gap:32px;}
+  }
+</style>
 </head>
-
 <body>
 
 <header>
-  <h2>SAI JNP CONSTRUCTIONS</h2>
-
+  <div class="logo">SAI JNP <span>CONSTRUCTIONS</span></div>
   <nav>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Projects</a>
-    <a href="#">Contact</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
-
 <section class="hero">
-
-  <h1>Building Dreams.<br>Creating Landmarks.</h1>
-
-  <p>
-    Residential • Apartments • Commercial • Interiors
-  </p>
-
-  <div>
-    <a href="#" class="button">View Our Projects</a>
-    <a href="#" class="button">Get a Quote</a>
+  <div class="brand-highlight mono">SAI JNP CONSTRUCTIONS</div>
+  <div class="eyebrow mono">GENERAL CONTRACTING &amp; BUILDING WORKS</div>
+  <h1>WE BUILD<br><em>STRUCTURES</em><br>THAT LAST.</h1>
+  <p class="sub">Sai JNP Constructions delivers residential and commercial building projects with a focus on solid engineering, honest timelines, and craftsmanship you can inspect at every stage.</p>
+  <div class="hero-cta">
+    <a href="#projects" class="btn btn-primary">View Our Work</a>
+    <a href="#contact" class="btn btn-outline">Get a Quote</a>
   </div>
-
+  <div class="hero-stats">
+    <div><div class="stat-num">--</div><div class="stat-label">Projects Completed</div></div>
+    <div><div class="stat-num">--</div><div class="stat-label">Years of Experience</div></div>
+    <div><div class="stat-num">--</div><div class="stat-label">Cities Served</div></div>
+  </div>
 </section>
 
-
-<section class="services">
-
-  <h2>What We Build</h2>
-
-  <div class="service-container">
-
-    <div class="service">
-      <h3>House Construction</h3>
-      <p>Complete residential construction from planning to handover.</p>
-    </div>
-
-    <div class="service">
-      <h3>Apartments</h3>
-      <p>Construction solutions for apartment and residential developments.</p>
-    </div>
-
-    <div class="service">
-      <h3>Interiors</h3>
-      <p>Functional and beautiful interiors designed around your lifestyle.</p>
-    </div>
-
-    <div class="service">
-      <h3>Renovation</h3>
-      <p>Transforming existing properties with modern construction and design.</p>
-    </div>
-
+<section class="about" id="about">
+  <div class="section-head">
+    <span class="tag mono">// About Us</span>
+    <h2>Built on trust, site by site.</h2>
   </div>
-
+  <div class="about-grid">
+    <p>Add a short story here about how Sai JNP Constructions started, the founder's background, and what the company stands for. Two to three paragraphs works well — clients like to know who is actually managing their site.</p>
+    <ul class="about-list">
+      <li><span>Founded</span><span>Add Year</span></li>
+      <li><span>Head Office</span><span>Add City</span></li>
+      <li><span>Team Size</span><span>Add Number</span></li>
+      <li><span>Specialization</span><span>Add Detail</span></li>
+    </ul>
+  </div>
 </section>
 
+<section class="services" id="services">
+  <div class="section-head">
+    <span class="tag mono">// What We Do</span>
+    <h2>Services</h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="service-num mono">01</span>
+      <h3>Residential Construction</h3>
+      <p>Independent houses, villas, and apartment buildings from foundation to finish.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-num mono">02</span>
+      <h3>Commercial Buildings</h3>
+      <p>Office spaces, shops, and complexes built to spec and on schedule.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-num mono">03</span>
+      <h3>Renovation &amp; Extension</h3>
+      <p>Structural additions, remodeling, and upgrades to existing buildings.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-num mono">04</span>
+      <h3>Project Consultation</h3>
+      <p>Planning, estimation, and site supervision for owners managing their own build.</p>
+    </div>
+  </div>
+</section>
+
+<section class="projects" id="projects">
+  <div class="section-head">
+    <span class="tag mono">// Our Work</span>
+    <h2>Featured Projects</h2>
+  </div>
+  <div class="project-grid">
+    <div class="project-card">
+      <div class="project-thumb"><span>Add Project Photo</span></div>
+      <div class="project-body">
+        <span class="tag mono">Residential</span>
+        <h3>Project Name — Location</h3>
+        <p>Short note on scope: e.g. 3BHK independent house, completed 2024.</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-thumb"><span>Add Project Photo</span></div>
+      <div class="project-body">
+        <span class="tag mono">Commercial</span>
+        <h3>Project Name — Location</h3>
+        <p>Short note on scope: e.g. 3-storey commercial complex.</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-thumb"><span>Add Project Photo</span></div>
+      <div class="project-body">
+        <span class="tag mono">Renovation</span>
+        <h3>Project Name — Location</h3>
+        <p>Short note on scope: e.g. full home renovation and extension.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="section-head">
+    <span class="tag mono">// Why Choose Us</span>
+    <h2>What sets us apart</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-card"><span class="num">A</span><h3>Quality Materials</h3><p>Add detail on sourcing and material standards you follow.</p></div>
+    <div class="why-card"><span class="num">B</span><h3>On-Time Delivery</h3><p>Add detail on how project timelines are planned and tracked.</p></div>
+    <div class="why-card"><span class="num">C</span><h3>Transparent Costing</h3><p>Add detail on how estimates and billing are handled.</p></div>
+    <div class="why-card"><span class="num">D</span><h3>Skilled Team</h3><p>Add detail on your workforce, engineers, or supervisors.</p></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="section-head">
+    <span class="tag mono">// Get In Touch</span>
+    <h2>Start your project</h2>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <p>Tell us about your site and requirements — we'll get back with a plan and estimate.</p>
+      <div class="contact-detail"><span>Phone</span>Add Phone Number</div>
+      <div class="contact-detail"><span>Email</span>Add Email Address</div>
+      <div class="contact-detail"><span>Office</span>Add Address</div>
+    </div>
+    <form onsubmit="event.preventDefault(); alert('Form submission needs to be connected — hook this up to your email or a form service.');">
+      <input type="text" placeholder="Your Name" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <input type="text" placeholder="Project Location">
+      <textarea placeholder="Tell us about your project"></textarea>
+      <button class="btn btn-primary" type="submit">Send Enquiry</button>
+    </form>
+  </div>
+</section>
 
 <footer>
-  <p>© 2026 Sai JNP Constructions. All Rights Reserved.</p>
+  <div>© <span id="year"></span> Sai JNP Constructions. All rights reserved.</div>
+  <div>Site placeholder — content to be added</div>
 </footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
