@@ -491,4 +491,87 @@
 
 <section class="contact" id="contact">
   <div class="section-head reveal">
-    <span class="tag m
+    <span class="tag mono">// Get In Touch</span>
+    <h2>Start your project</h2>
+  </div>
+  <div class="contact-grid reveal-stagger">
+    <div class="contact-info">
+      <p>Tell us about your site and requirements — we'll get back with a plan and estimate.</p>
+      <div class="contact-detail"><span>Phone</span>Add Phone Number</div>
+      <div class="contact-detail"><span>Email</span>Add Email Address</div>
+      <div class="contact-detail"><span>Office</span>Add Address</div>
+    </div>
+    <form onsubmit="event.preventDefault(); alert('Form submission needs to be connected — hook this up to your email or a form service.');">
+      <input type="text" placeholder="Your Name" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <input type="text" placeholder="Project Location">
+      <textarea placeholder="Tell us about your project"></textarea>
+      <button class="btn btn-primary" type="submit">Send Enquiry</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div>© <span id="year"></span> Sai JNP Constructions. All rights reserved.</div>
+  <div>Site placeholder — content to be added</div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ---------- mobile nav toggle ----------
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+  const navOverlay = document.getElementById('nav-overlay');
+
+  function closeNav(){
+    navLinks.classList.remove('open');
+    navOverlay.classList.remove('open');
+    navToggle.innerHTML = '&#9776;';
+  }
+  function toggleNav(){
+    const isOpen = navLinks.classList.toggle('open');
+    navOverlay.classList.toggle('open', isOpen);
+    navToggle.innerHTML = isOpen ? '&#10005;' : '&#9776;';
+  }
+  navToggle.addEventListener('click', toggleNav);
+  navOverlay.addEventListener('click', closeNav);
+  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeNav));
+  window.addEventListener('resize', () => { if (window.innerWidth > 800) closeNav(); });
+
+  // ---------- sticky header shrink ----------
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  // ---------- scroll progress bar ----------
+  const progressBar = document.getElementById('scroll-progress');
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    progressBar.style.width = scrolled + '%';
+  }, { passive: true });
+
+  // ---------- reduced motion ----------
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---------- scroll reveal ----------
+  const revealTargets = document.querySelectorAll('.reveal, .reveal-stagger');
+  if (prefersReduced) {
+    revealTargets.forEach(el => el.classList.add('in-view'));
+  } else {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.16 });
+    revealTargets.forEach(el => io.observe(el));
+  }
+</script>
+
+</body>
+</html>
