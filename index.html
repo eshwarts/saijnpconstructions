@@ -14,6 +14,7 @@
     --offwhite:#f2f0ea;
     --steel:#2f4858;
     --safety:#e8a33d;
+    --logo-green:#1c3328;
     --line:rgba(28,28,26,0.14);
     --ease:cubic-bezier(.16,.84,.32,1);
     --ease-bounce:cubic-bezier(.34,1.56,.64,1);
@@ -68,9 +69,32 @@
     display:flex;align-items:center;gap:12px;
     flex-shrink:1;min-width:0;
     white-space:nowrap;overflow:hidden;
+    color:var(--logo-green);
   }
   .logo-text{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-  .logo span{color:var(--safety);}
+  .logo span{
+    color:var(--logo-green);
+    font-family:'Inter',sans-serif;
+    font-weight:400;
+    text-transform:uppercase;
+    letter-spacing:0.3px;
+  }
+  .nav-panel-title{
+    display:none;
+    font-family:'Archivo Black',sans-serif;
+    color:var(--logo-green);
+    font-size:1.3rem;
+    letter-spacing:0.5px;
+    margin-bottom:20px;
+    padding-bottom:16px;
+    border-bottom:1px solid var(--line);
+    width:100%;
+  }
+  .nav-panel-title span{
+    font-family:'Inter',sans-serif;
+    font-weight:400;
+    letter-spacing:0.3px;
+  }
   .logo-img{
     height:48px;width:auto;object-fit:contain;flex-shrink:0;
   }
@@ -122,6 +146,7 @@
     nav.open{transform:translateX(0);}
     nav a{margin-left:0;padding:16px 0;width:100%;border-bottom:1px solid var(--line);font-size:0.85rem;}
     .nav-toggle{display:flex;}
+    .nav-panel-title{display:block;}
   }
 
   /* ---------- nav overlay for mobile ---------- */
@@ -341,6 +366,7 @@
     <span class="logo-text">SAI JNP <span>CONSTRUCTIONS</span></span>
   </div>
   <nav id="nav-links">
+    <div class="nav-panel-title">SAI JNP <span>CONSTRUCTIONS</span></div>
     <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#projects">Projects</a>
@@ -465,15 +491,4 @@
 
 <section class="contact" id="contact">
   <div class="section-head reveal">
-    <span class="tag mono">// Get In Touch</span>
-    <h2>Start your project</h2>
-  </div>
-  <div class="contact-grid reveal-stagger">
-    <div class="contact-info">
-      <p>Tell us about your site and requirements — we'll get back with a plan and estimate.</p>
-      <div class="contact-detail"><span>Phone</span>Add Phone Number</div>
-      <div class="contact-detail"><span>Email</span>Add Email Address</div>
-      <div class="contact-detail"><span>Office</span>Add Address</div>
-    </div>
-    <form onsubmit="event.preventDefault(); alert('Form submission needs to be connected — hook this up to your email or a form service.');">
-      <input type="text" placeholder="Your Name" require
+    <span class="tag m
