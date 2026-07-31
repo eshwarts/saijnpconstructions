@@ -13,9 +13,9 @@
 
   <style>
 
-    /* ================================
-       BASIC SETTINGS
-    ================================= */
+    /* ========================================
+       RESET
+    ======================================== */
 
     * {
       margin: 0;
@@ -25,7 +25,7 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 90px;
+      scroll-padding-top: 100px;
     }
 
     body {
@@ -37,6 +37,7 @@
 
     img {
       max-width: 100%;
+      display: block;
     }
 
     a {
@@ -44,13 +45,13 @@
     }
 
 
-    /* ================================
+    /* ========================================
        HEADER
-    ================================= */
+    ======================================== */
 
     header {
-      width: 95%;
-      height: 82px;
+      width: 100%;
+      height: 105px;
 
       background: #ffffff;
 
@@ -69,7 +70,7 @@
       width: 90%;
       max-width: 1250px;
 
-      margin: auto;
+      margin: 0 auto;
 
       display: flex;
       align-items: center;
@@ -77,63 +78,81 @@
     }
 
 
-    /* BRAND */
+    /* ========================================
+       BRAND
+    ======================================== */
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+
+      gap: 18px;
 
       color: #151515;
+
+      min-width: 0;
     }
 
     .brand-logo {
-      width: 125px;
-      height: 80px;
+      width: 145px;
+      height: 82px;
 
       object-fit: contain;
-      display: block;
+
+      flex-shrink: 0;
     }
 
     .brand-text {
       display: flex;
       flex-direction: column;
 
-      line-height: 1.05;
+      line-height: 1;
     }
 
     .brand-name {
-      font-size: 20px;
+      font-size: 25px;
+
       font-weight: 800;
 
-      letter-spacing: 0.3px;
+      letter-spacing: 0.2px;
+
+      white-space: nowrap;
     }
 
     .brand-subtitle {
-      font-size: 10px;
+      margin-top: 8px;
 
-      margin-top: 5px;
+      font-size: 11px;
 
-      letter-spacing: 2px;
+      font-weight: 500;
 
       color: #777777;
 
+      letter-spacing: 2.5px;
+
       text-transform: uppercase;
+
+      white-space: nowrap;
     }
 
 
-    /* NAVIGATION */
+    /* ========================================
+       NAVIGATION
+    ======================================== */
 
     nav {
       display: flex;
+
       align-items: center;
-      gap: 30px;
+
+      gap: 28px;
     }
 
     nav a {
       color: #333333;
 
       font-size: 14px;
+
       font-weight: 600;
 
       transition: 0.2s;
@@ -142,9 +161,6 @@
     nav a:hover {
       color: #d18b28;
     }
-
-
-    /* CONTACT BUTTON */
 
     .nav-contact {
       background: #1d1d1d;
@@ -161,23 +177,32 @@
     }
 
 
-    /* MOBILE MENU BUTTON */
+    /* ========================================
+       MOBILE MENU BUTTON
+    ======================================== */
 
     .menu-button {
       display: none;
 
-      background: none;
       border: none;
 
-      font-size: 28px;
+      background: transparent;
+
+      color: #111111;
+
+      font-size: 31px;
+
+      line-height: 1;
 
       cursor: pointer;
+
+      padding: 5px;
     }
 
 
-    /* ================================
+    /* ========================================
        HERO
-    ================================= */
+    ======================================== */
 
     .hero {
       min-height: 640px;
@@ -195,73 +220,88 @@
         url("images/hero.jpg");
 
       background-size: cover;
+
       background-position: center;
 
-      color: white;
+      background-color: #333333;
+
+      color: #ffffff;
     }
 
     .hero-content {
       width: 90%;
+
       max-width: 1250px;
 
-      margin: auto;
+      margin: 0 auto;
     }
 
     .hero-small {
+      margin-bottom: 15px;
+
       color: #e5a33e;
 
       font-size: 13px;
-      font-weight: bold;
 
-      letter-spacing: 3px;
+      font-weight: 700;
+
+      letter-spacing: 4px;
 
       text-transform: uppercase;
-
-      margin-bottom: 15px;
     }
 
     .hero h1 {
-      max-width: 750px;
+      max-width: 800px;
+
+      margin-bottom: 24px;
 
       font-size: clamp(44px, 6vw, 78px);
 
       line-height: 1.02;
 
-      margin-bottom: 24px;
+      letter-spacing: -2px;
     }
 
     .hero p {
       max-width: 610px;
 
-      font-size: 18px;
+      margin-bottom: 32px;
 
       color: #eeeeee;
 
-      margin-bottom: 32px;
+      font-size: 18px;
     }
 
     .hero-buttons {
       display: flex;
+
       gap: 12px;
 
       flex-wrap: wrap;
     }
+
+
+    /* ========================================
+       BUTTONS
+    ======================================== */
 
     .button {
       display: inline-block;
 
       padding: 14px 24px;
 
-      font-size: 14px;
-      font-weight: bold;
-
       border-radius: 3px;
+
+      font-size: 14px;
+
+      font-weight: 700;
 
       transition: 0.2s;
     }
 
     .button-primary {
       background: #d18b28;
+
       color: #ffffff;
     }
 
@@ -282,9 +322,9 @@
     }
 
 
-    /* ================================
+    /* ========================================
        COMMON SECTIONS
-    ================================= */
+    ======================================== */
 
     section {
       padding: 90px 0;
@@ -292,30 +332,32 @@
 
     .container {
       width: 90%;
+
       max-width: 1250px;
 
-      margin: auto;
+      margin: 0 auto;
     }
 
     .section-label {
+      margin-bottom: 10px;
+
       color: #c47d1d;
 
       font-size: 12px;
-      font-weight: bold;
+
+      font-weight: 700;
 
       letter-spacing: 3px;
 
       text-transform: uppercase;
-
-      margin-bottom: 10px;
     }
 
     .section-title {
+      margin-bottom: 20px;
+
       font-size: clamp(32px, 4vw, 48px);
 
       line-height: 1.15;
-
-      margin-bottom: 20px;
     }
 
     .section-description {
@@ -327,9 +369,9 @@
     }
 
 
-    /* ================================
+    /* ========================================
        ABOUT
-    ================================= */
+    ======================================== */
 
     .about-grid {
       display: grid;
@@ -342,35 +384,35 @@
     }
 
     .about-text p {
-      color: #666666;
-
       margin-bottom: 16px;
+
+      color: #666666;
     }
 
     .about-box {
       min-height: 390px;
 
-      background: #eeeeee;
+      padding: 30px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
+      background: #eeeeee;
 
       border-radius: 5px;
 
       color: #888888;
 
-      font-size: 14px;
-
       text-align: center;
-
-      padding: 30px;
     }
 
 
-    /* ================================
+    /* ========================================
        SERVICES
-    ================================= */
+    ======================================== */
 
     .services {
       background: #f7f7f5;
@@ -387,9 +429,9 @@
     }
 
     .service-card {
-      background: #ffffff;
-
       padding: 35px 28px;
+
+      background: #ffffff;
 
       border: 1px solid #e8e8e8;
 
@@ -403,18 +445,19 @@
     }
 
     .service-number {
+      margin-bottom: 25px;
+
       color: #d18b28;
 
       font-size: 13px;
-      font-weight: bold;
 
-      margin-bottom: 25px;
+      font-weight: 700;
     }
 
     .service-card h3 {
-      font-size: 21px;
-
       margin-bottom: 12px;
+
+      font-size: 21px;
     }
 
     .service-card p {
@@ -424,15 +467,16 @@
     }
 
 
-    /* ================================
+    /* ========================================
        PROJECTS
-    ================================= */
+    ======================================== */
 
     .projects-heading {
       display: flex;
 
       justify-content: space-between;
-      align-items: end;
+
+      align-items: flex-end;
 
       gap: 30px;
 
@@ -448,49 +492,52 @@
     }
 
     .project-card {
-      background: #eeeeee;
+      position: relative;
 
       min-height: 380px;
 
-      position: relative;
-
       overflow: hidden;
+
+      background: #eeeeee;
 
       border-radius: 3px;
     }
 
     .project-placeholder {
       width: 100%;
-      height: 100%;
+
       min-height: 380px;
+
+      padding: 30px;
 
       display: flex;
 
       align-items: center;
+
       justify-content: center;
 
       color: #8a8a8a;
 
       text-align: center;
-
-      padding: 30px;
     }
 
     .project-info {
       position: absolute;
 
       left: 0;
+
       right: 0;
+
       bottom: 0;
 
       padding: 45px 22px 20px;
 
-      color: white;
+      color: #ffffff;
 
       background:
         linear-gradient(
           transparent,
-          rgba(0, 0, 0, 0.85)
+          rgba(0, 0, 0, 0.88)
         );
     }
 
@@ -499,15 +546,15 @@
     }
 
     .project-info p {
-      font-size: 13px;
-
       color: #dddddd;
+
+      font-size: 13px;
     }
 
 
-    /* ================================
+    /* ========================================
        WHY CHOOSE US
-    ================================= */
+    ======================================== */
 
     .why-us {
       background: #1b1b1b;
@@ -530,9 +577,9 @@
     }
 
     .why-item {
-      border-top: 2px solid #d18b28;
-
       padding-top: 20px;
+
+      border-top: 2px solid #d18b28;
     }
 
     .why-item h3 {
@@ -548,9 +595,9 @@
     }
 
 
-    /* ================================
+    /* ========================================
        CONTACT
-    ================================= */
+    ======================================== */
 
     .contact {
       text-align: center;
@@ -573,7 +620,7 @@
     .contact-dark {
       background: #1b1b1b;
 
-      color: white;
+      color: #ffffff;
     }
 
     .contact-dark:hover {
@@ -581,36 +628,38 @@
     }
 
 
-    /* ================================
+    /* ========================================
        FOOTER
-    ================================= */
+    ======================================== */
 
     footer {
+      padding: 35px 0;
+
       background: #111111;
 
       color: #aaaaaa;
-
-      padding: 35px 0;
     }
 
     .footer-container {
       width: 90%;
+
       max-width: 1250px;
 
-      margin: auto;
+      margin: 0 auto;
 
       display: flex;
 
       justify-content: space-between;
+
       align-items: center;
 
       gap: 20px;
     }
 
     .footer-brand {
-      color: white;
+      color: #ffffff;
 
-      font-weight: bold;
+      font-weight: 700;
     }
 
     footer p {
@@ -618,61 +667,106 @@
     }
 
 
-    /* ================================
-       MOBILE
-    ================================= */
+    /* ========================================
+       TABLET / MOBILE
+    ======================================== */
 
     @media (max-width: 850px) {
 
+      html {
+        scroll-padding-top: 90px;
+      }
+
       header {
-        height: 72px;
+        height: 90px;
+      }
+
+      .nav-container {
+        width: 94%;
+      }
+
+      .brand {
+        gap: 10px;
       }
 
       .brand-logo {
-        width: 48px;
-        height: 48px;
+        width: 90px;
+
+        height: 68px;
       }
 
       .brand-name {
-        font-size: 16px;
+        font-size: 18px;
+
+        line-height: 1.1;
       }
 
       .brand-subtitle {
+        margin-top: 5px;
+
         font-size: 8px;
+
+        letter-spacing: 1.5px;
       }
 
       .menu-button {
         display: block;
+
+        flex-shrink: 0;
       }
+
+
+      /* MOBILE NAVIGATION */
 
       nav {
         display: none;
 
         position: absolute;
 
-        top: 72px;
+        top: 90px;
+
         left: 0;
 
         width: 100%;
 
-        padding: 25px;
+        padding: 25px 5%;
 
-        background: white;
+        background: #ffffff;
 
         flex-direction: column;
 
         align-items: flex-start;
 
+        gap: 22px;
+
         border-bottom: 1px solid #dddddd;
+
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
       }
 
       nav.active {
         display: flex;
       }
 
+      nav a {
+        width: 100%;
+
+        font-size: 16px;
+      }
+
+      .nav-contact {
+        width: auto;
+      }
+
+
+      /* HERO */
+
       .hero {
         min-height: 570px;
       }
+
+
+      /* ABOUT */
 
       .about-grid {
         grid-template-columns: 1fr;
@@ -680,21 +774,37 @@
         gap: 40px;
       }
 
+
+      /* SERVICES */
+
       .services-grid {
         grid-template-columns: 1fr;
+      }
+
+
+      /* PROJECTS */
+
+      .projects-heading {
+        display: block;
+      }
+
+      .projects-heading .section-description {
+        margin-top: 15px;
       }
 
       .projects-grid {
         grid-template-columns: 1fr;
       }
 
+
+      /* WHY */
+
       .why-grid {
         grid-template-columns: 1fr 1fr;
       }
 
-      .projects-heading {
-        display: block;
-      }
+
+      /* FOOTER */
 
       .footer-container {
         flex-direction: column;
@@ -705,18 +815,54 @@
     }
 
 
-    @media (max-width: 500px) {
+    /* ========================================
+       SMALL MOBILE
+    ======================================== */
+
+    @media (max-width: 520px) {
 
       section {
         padding: 65px 0;
+      }
+
+      header {
+        height: 88px;
+      }
+
+      .nav-container {
+        width: 96%;
+      }
+
+      .brand {
+        gap: 8px;
+      }
+
+      .brand-logo {
+        width: 86px;
+
+        height: 65px;
+      }
+
+      .brand-name {
+        font-size: 17px;
       }
 
       .brand-subtitle {
         display: none;
       }
 
+      nav {
+        top: 88px;
+      }
+
+      .hero {
+        min-height: 560px;
+      }
+
       .hero h1 {
         font-size: 43px;
+
+        letter-spacing: -1px;
       }
 
       .hero p {
@@ -729,28 +875,54 @@
 
     }
 
+
+    /* ========================================
+       VERY SMALL PHONES
+    ======================================== */
+
+    @media (max-width: 380px) {
+
+      .brand-logo {
+        width: 75px;
+
+        height: 60px;
+      }
+
+      .brand-name {
+        font-size: 15px;
+      }
+
+      .menu-button {
+        font-size: 27px;
+      }
+
+    }
+
   </style>
+
 </head>
 
 
 <body>
 
 
-  <!-- ============================
+  <!-- ========================================
        HEADER
-  ============================= -->
+  ======================================== -->
 
   <header>
 
     <div class="nav-container">
 
+
       <a href="#home" class="brand">
 
         <img
           src="images/logo.png"
-          alt="Sai JNP Constructions Logo"
+          alt="Sai JNP Constructions"
           class="brand-logo"
         >
+
 
         <div class="brand-text">
 
@@ -771,6 +943,7 @@
         class="menu-button"
         id="menuButton"
         aria-label="Open navigation menu"
+        aria-expanded="false"
       >
         ☰
       </button>
@@ -778,19 +951,31 @@
 
       <nav id="navigation">
 
-        <a href="#home">Home</a>
+        <a href="#home">
+          Home
+        </a>
 
-        <a href="#about">About</a>
+        <a href="#about">
+          About
+        </a>
 
-        <a href="#services">Services</a>
+        <a href="#services">
+          Services
+        </a>
 
-        <a href="#projects">Projects</a>
+        <a href="#projects">
+          Projects
+        </a>
 
-        <a href="#contact" class="nav-contact">
+        <a
+          href="#contact"
+          class="nav-contact"
+        >
           Contact Us
         </a>
 
       </nav>
+
 
     </div>
 
@@ -798,30 +983,38 @@
 
 
 
-  <!-- ============================
-       HERO
-  ============================= -->
-
   <main>
 
-    <section class="hero" id="home">
+
+    <!-- ========================================
+         HERO
+    ======================================== -->
+
+    <section
+      class="hero"
+      id="home"
+    >
 
       <div class="hero-content">
+
 
         <div class="hero-small">
           Sai JNP Constructions
         </div>
+
 
         <h1>
           Building Dreams.<br>
           Creating Landmarks.
         </h1>
 
+
         <p>
           Quality construction built with precision, trust and commitment.
           From ideas to finished spaces, we build with attention to every
           detail.
         </p>
+
 
         <div class="hero-buttons">
 
@@ -832,6 +1025,7 @@
             View Our Projects
           </a>
 
+
           <a
             href="#contact"
             class="button button-outline"
@@ -841,15 +1035,16 @@
 
         </div>
 
+
       </div>
 
     </section>
 
 
 
-    <!-- ============================
+    <!-- ========================================
          ABOUT
-    ============================= -->
+    ======================================== -->
 
     <section id="about">
 
@@ -864,9 +1059,11 @@
               About Us
             </div>
 
+
             <h2 class="section-title">
               Building with purpose.
             </h2>
+
 
             <p>
               Sai JNP Constructions is committed to creating quality spaces
@@ -874,19 +1071,18 @@
               to detail.
             </p>
 
+
             <p>
               Whether it is a new home, commercial space or renovation, our
-              focus is on delivering dependable workmanship while bringing
-              each client's vision to life.
+              focus is on dependable workmanship while bringing each client's
+              vision to life.
             </p>
 
           </div>
 
 
           <div class="about-box">
-
-            Your construction/project image will go here.
-
+            Project image will go here.
           </div>
 
 
@@ -898,9 +1094,9 @@
 
 
 
-    <!-- ============================
+    <!-- ========================================
          SERVICES
-    ============================= -->
+    ======================================== -->
 
     <section
       class="services"
@@ -909,19 +1105,23 @@
 
       <div class="container">
 
+
         <div class="section-label">
           What We Do
         </div>
 
+
         <h2 class="section-title">
           Our Services
         </h2>
+
 
         <p class="section-description">
           From planning to completion, Sai JNP Constructions provides
           construction solutions focused on quality, functionality and
           lasting value.
         </p>
+
 
 
         <div class="services-grid">
@@ -945,6 +1145,7 @@
           </div>
 
 
+
           <div class="service-card">
 
             <div class="service-number">
@@ -961,6 +1162,7 @@
             </p>
 
           </div>
+
 
 
           <div class="service-card">
@@ -989,9 +1191,9 @@
 
 
 
-    <!-- ============================
+    <!-- ========================================
          PROJECTS
-    ============================= -->
+    ======================================== -->
 
     <section id="projects">
 
@@ -999,6 +1201,7 @@
 
 
         <div class="projects-heading">
+
 
           <div>
 
@@ -1014,9 +1217,11 @@
 
 
           <p class="section-description">
-            A selection of our construction work. We will replace these
-            placeholders with your actual completed and ongoing projects.
+            A selection of our construction work. These placeholders can later
+            be replaced with photographs of your completed and ongoing
+            projects.
           </p>
+
 
         </div>
 
@@ -1046,6 +1251,7 @@
           </div>
 
 
+
           <div class="project-card">
 
             <div class="project-placeholder">
@@ -1065,6 +1271,7 @@
             </div>
 
           </div>
+
 
 
           <div class="project-card">
@@ -1096,26 +1303,30 @@
 
 
 
-    <!-- ============================
+    <!-- ========================================
          WHY CHOOSE US
-    ============================= -->
+    ======================================== -->
 
     <section class="why-us">
 
       <div class="container">
 
+
         <div class="section-label">
           Why Sai JNP
         </div>
+
 
         <h2 class="section-title">
           Built on trust.
         </h2>
 
+
         <p class="section-description">
           We believe good construction starts with clear communication and
           ends with work we are proud to stand behind.
         </p>
+
 
 
         <div class="why-grid">
@@ -1135,6 +1346,7 @@
           </div>
 
 
+
           <div class="why-item">
 
             <h3>
@@ -1146,6 +1358,7 @@
             </p>
 
           </div>
+
 
 
           <div class="why-item">
@@ -1160,6 +1373,7 @@
             </p>
 
           </div>
+
 
 
           <div class="why-item">
@@ -1183,9 +1397,9 @@
 
 
 
-    <!-- ============================
+    <!-- ========================================
          CONTACT
-    ============================= -->
+    ======================================== -->
 
     <section
       class="contact"
@@ -1194,13 +1408,16 @@
 
       <div class="container">
 
+
         <div class="section-label">
           Start Your Project
         </div>
 
+
         <h2 class="section-title">
           Planning to build?
         </h2>
+
 
         <p class="section-description">
           Tell us about your construction requirements and let's discuss how
@@ -1210,6 +1427,9 @@
 
         <div class="contact-buttons">
 
+
+          <!-- Replace phone number later -->
+
           <a
             href="tel:+910000000000"
             class="button contact-dark"
@@ -1217,12 +1437,16 @@
             Call Us
           </a>
 
+
+          <!-- WhatsApp link will be added later -->
+
           <a
             href="#"
             class="button button-primary"
           >
             WhatsApp
           </a>
+
 
         </div>
 
@@ -1235,21 +1459,26 @@
 
 
 
-  <!-- ============================
+  <!-- ========================================
        FOOTER
-  ============================= -->
+  ======================================== -->
 
   <footer>
 
     <div class="footer-container">
 
+
       <div class="footer-brand">
         Sai JNP Constructions
       </div>
 
+
       <p>
-        © <span id="year"></span> Sai JNP Constructions. All Rights Reserved.
+        © <span id="year"></span>
+        Sai JNP Constructions.
+        All Rights Reserved.
       </p>
+
 
     </div>
 
@@ -1257,9 +1486,9 @@
 
 
 
-  <!-- ============================
+  <!-- ========================================
        JAVASCRIPT
-  ============================= -->
+  ======================================== -->
 
   <script>
 
@@ -1274,6 +1503,17 @@
 
       navigation.classList.toggle("active");
 
+      const isOpen =
+        navigation.classList.contains("active");
+
+      menuButton.setAttribute(
+        "aria-expanded",
+        isOpen
+      );
+
+      menuButton.textContent =
+        isOpen ? "✕" : "☰";
+
     });
 
 
@@ -1284,6 +1524,13 @@
         link.addEventListener("click", function () {
 
           navigation.classList.remove("active");
+
+          menuButton.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+          menuButton.textContent = "☰";
 
         });
 
