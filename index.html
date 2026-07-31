@@ -6,16 +6,18 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description"
-        content="Sai JNP Constructions - Quality residential and commercial construction. Building with precision, trust and commitment.">
+  <meta
+    name="description"
+    content="Sai JNP Constructions - Quality residential and commercial construction built with precision, trust and commitment."
+  >
 
   <title>Sai JNP Constructions</title>
 
   <style>
 
-    /* ========================================
+    /* ==================================================
        RESET
-    ======================================== */
+    ================================================== */
 
     * {
       margin: 0;
@@ -25,7 +27,7 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 100px;
+      scroll-padding-top: 105px;
     }
 
     body {
@@ -45,9 +47,9 @@
     }
 
 
-    /* ========================================
+    /* ==================================================
        HEADER
-    ======================================== */
+    ================================================== */
 
     header {
       width: 100%;
@@ -66,24 +68,29 @@
       border-bottom: 1px solid #eeeeee;
     }
 
+
+    /* ==================================================
+       DESKTOP HEADER CONTAINER
+    ================================================== */
+
     .nav-container {
-    width: 100%;
-    max-width: none;
+      width: 100%;
+      max-width: none;
 
-    padding-left: 40px;
-    padding-right: 40px;
+      padding-left: 40px;
+      padding-right: 40px;
 
-    margin: 0 auto;
+      margin: 0 auto;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
 
-    /* ========================================
+    /* ==================================================
        BRAND
-    ======================================== */
+    ================================================== */
 
     .brand {
       display: flex;
@@ -139,13 +146,12 @@
     }
 
 
-    /* ========================================
-       NAVIGATION
-    ======================================== */
+    /* ==================================================
+       DESKTOP NAVIGATION
+    ================================================== */
 
     nav {
       display: flex;
-
       align-items: center;
 
       gap: 28px;
@@ -158,7 +164,9 @@
 
       font-weight: 600;
 
-      transition: 0.2s;
+      transition:
+        color 0.2s ease,
+        background 0.2s ease;
     }
 
     nav a:hover {
@@ -166,11 +174,11 @@
     }
 
     .nav-contact {
+      padding: 11px 18px;
+
       background: #1d1d1d;
 
       color: #ffffff !important;
-
-      padding: 11px 18px;
 
       border-radius: 4px;
     }
@@ -180,14 +188,16 @@
     }
 
 
-    /* ========================================
-       MOBILE MENU BUTTON
-    ======================================== */
+    /* ==================================================
+       HAMBURGER
+    ================================================== */
 
     .menu-button {
       display: none;
 
-      border: none;
+      padding: 5px;
+
+      border: 0;
 
       background: transparent;
 
@@ -199,13 +209,13 @@
 
       cursor: pointer;
 
-      padding: 5px;
+      flex-shrink: 0;
     }
 
 
-    /* ========================================
+    /* ==================================================
        HERO
-    ======================================== */
+    ================================================== */
 
     .hero {
       min-height: 640px;
@@ -266,7 +276,7 @@
     }
 
     .hero p {
-      max-width: 610px;
+      max-width: 620px;
 
       margin-bottom: 32px;
 
@@ -284,9 +294,9 @@
     }
 
 
-    /* ========================================
+    /* ==================================================
        BUTTONS
-    ======================================== */
+    ================================================== */
 
     .button {
       display: inline-block;
@@ -299,7 +309,7 @@
 
       font-weight: 700;
 
-      transition: 0.2s;
+      transition: 0.2s ease;
     }
 
     .button-primary {
@@ -325,9 +335,9 @@
     }
 
 
-    /* ========================================
+    /* ==================================================
        COMMON SECTIONS
-    ======================================== */
+    ================================================== */
 
     section {
       padding: 90px 0;
@@ -372,9 +382,9 @@
     }
 
 
-    /* ========================================
+    /* ==================================================
        ABOUT
-    ======================================== */
+    ================================================== */
 
     .about-grid {
       display: grid;
@@ -400,7 +410,6 @@
       display: flex;
 
       align-items: center;
-
       justify-content: center;
 
       background: #eeeeee;
@@ -413,9 +422,9 @@
     }
 
 
-    /* ========================================
+    /* ==================================================
        SERVICES
-    ======================================== */
+    ================================================== */
 
     .services {
       background: #f7f7f5;
@@ -438,7 +447,9 @@
 
       border: 1px solid #e8e8e8;
 
-      transition: 0.25s;
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
     }
 
     .service-card:hover {
@@ -470,9 +481,9 @@
     }
 
 
-    /* ========================================
+    /* ==================================================
        PROJECTS
-    ======================================== */
+    ================================================== */
 
     .projects-heading {
       display: flex;
@@ -516,7 +527,6 @@
       display: flex;
 
       align-items: center;
-
       justify-content: center;
 
       color: #8a8a8a;
@@ -528,9 +538,7 @@
       position: absolute;
 
       left: 0;
-
       right: 0;
-
       bottom: 0;
 
       padding: 45px 22px 20px;
@@ -555,9 +563,9 @@
     }
 
 
-    /* ========================================
+    /* ==================================================
        WHY CHOOSE US
-    ======================================== */
+    ================================================== */
 
     .why-us {
       background: #1b1b1b;
@@ -598,9 +606,9 @@
     }
 
 
-    /* ========================================
+    /* ==================================================
        CONTACT
-    ======================================== */
+    ================================================== */
 
     .contact {
       text-align: center;
@@ -631,9 +639,9 @@
     }
 
 
-    /* ========================================
+    /* ==================================================
        FOOTER
-    ======================================== */
+    ================================================== */
 
     footer {
       padding: 35px 0;
@@ -670,9 +678,9 @@
     }
 
 
-    /* ========================================
-       TABLET / MOBILE
-    ======================================== */
+    /* ==================================================
+       TABLET + MOBILE
+    ================================================== */
 
     @media (max-width: 850px) {
 
@@ -684,9 +692,20 @@
         height: 90px;
       }
 
+
+      /* IMPORTANT:
+         Overrides desktop 40px padding.
+      */
+
       .nav-container {
-        width: 94%;
+        width: 100%;
+
+        padding-left: 12px;
+        padding-right: 12px;
       }
+
+
+      /* MOBILE BRAND */
 
       .brand {
         gap: 10px;
@@ -712,14 +731,12 @@
         letter-spacing: 1.5px;
       }
 
+
+      /* MOBILE MENU */
+
       .menu-button {
         display: block;
-
-        flex-shrink: 0;
       }
-
-
-      /* MOBILE NAVIGATION */
 
       nav {
         display: none;
@@ -732,7 +749,7 @@
 
         width: 100%;
 
-        padding: 25px 5%;
+        padding: 25px 20px;
 
         background: #ffffff;
 
@@ -744,7 +761,8 @@
 
         border-bottom: 1px solid #dddddd;
 
-        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        box-shadow:
+          0 8px 20px rgba(0, 0, 0, 0.08);
       }
 
       nav.active {
@@ -818,11 +836,15 @@
     }
 
 
-    /* ========================================
+    /* ==================================================
        SMALL MOBILE
-    ======================================== */
+    ================================================== */
 
     @media (max-width: 520px) {
+
+      html {
+        scroll-padding-top: 88px;
+      }
 
       section {
         padding: 65px 0;
@@ -833,11 +855,14 @@
       }
 
       .nav-container {
-        width: 96%;
+        width: 100%;
+
+        padding-left: 8px;
+        padding-right: 10px;
       }
 
       .brand {
-        gap: 8px;
+        gap: 7px;
       }
 
       .brand-logo {
@@ -848,22 +873,43 @@
 
       .brand-name {
         font-size: 17px;
+
+        letter-spacing: 0;
       }
 
       .brand-subtitle {
         display: none;
       }
 
+      .menu-button {
+        font-size: 29px;
+      }
+
       nav {
         top: 88px;
       }
+
+
+      /* HERO */
 
       .hero {
         min-height: 560px;
       }
 
+      .hero-content {
+        width: 88%;
+      }
+
+      .hero-small {
+        font-size: 11px;
+
+        letter-spacing: 3px;
+      }
+
       .hero h1 {
         font-size: 43px;
+
+        line-height: 1.02;
 
         letter-spacing: -1px;
       }
@@ -879,14 +925,23 @@
     }
 
 
-    /* ========================================
-       VERY SMALL PHONES
-    ======================================== */
+    /* ==================================================
+       VERY SMALL MOBILE
+    ================================================== */
 
     @media (max-width: 380px) {
 
+      .nav-container {
+        padding-left: 6px;
+        padding-right: 8px;
+      }
+
+      .brand {
+        gap: 5px;
+      }
+
       .brand-logo {
-        width: 75px;
+        width: 74px;
 
         height: 60px;
       }
@@ -899,6 +954,10 @@
         font-size: 27px;
       }
 
+      .hero h1 {
+        font-size: 38px;
+      }
+
     }
 
   </style>
@@ -909,20 +968,25 @@
 <body>
 
 
-  <!-- ========================================
+  <!-- ==================================================
        HEADER
-  ======================================== -->
+  ================================================== -->
 
   <header>
 
     <div class="nav-container">
 
 
-      <a href="#home" class="brand">
+      <a
+        href="#home"
+        class="brand"
+        aria-label="Sai JNP Constructions Home"
+      >
+
 
         <img
           src="images/logo.png"
-          alt="Sai JNP Constructions"
+          alt="Sai JNP Constructions Logo"
           class="brand-logo"
         >
 
@@ -939,7 +1003,9 @@
 
         </div>
 
+
       </a>
+
 
 
       <button
@@ -947,9 +1013,11 @@
         id="menuButton"
         aria-label="Open navigation menu"
         aria-expanded="false"
+        aria-controls="navigation"
       >
         ☰
       </button>
+
 
 
       <nav id="navigation">
@@ -986,12 +1054,16 @@
 
 
 
+  <!-- ==================================================
+       MAIN
+  ================================================== -->
+
   <main>
 
 
-    <!-- ========================================
+    <!-- ==================================================
          HERO
-    ======================================== -->
+    ================================================== -->
 
     <section
       class="hero"
@@ -1021,6 +1093,7 @@
 
         <div class="hero-buttons">
 
+
           <a
             href="#projects"
             class="button button-primary"
@@ -1036,6 +1109,7 @@
             Get a Quote
           </a>
 
+
         </div>
 
 
@@ -1045,18 +1119,20 @@
 
 
 
-    <!-- ========================================
+    <!-- ==================================================
          ABOUT
-    ======================================== -->
+    ================================================== -->
 
     <section id="about">
 
       <div class="container">
 
+
         <div class="about-grid">
 
 
           <div class="about-text">
+
 
             <div class="section-label">
               About Us
@@ -1076,20 +1152,25 @@
 
 
             <p>
-              Whether it is a new home, commercial space or renovation, our
-              focus is on dependable workmanship while bringing each client's
-              vision to life.
+              Whether it is a new home, commercial space or renovation,
+              our focus is on dependable workmanship while bringing each
+              client's vision to life.
             </p>
+
 
           </div>
 
 
+
           <div class="about-box">
+
             Project image will go here.
+
           </div>
 
 
         </div>
+
 
       </div>
 
@@ -1097,9 +1178,9 @@
 
 
 
-    <!-- ========================================
+    <!-- ==================================================
          SERVICES
-    ======================================== -->
+    ================================================== -->
 
     <section
       class="services"
@@ -1130,7 +1211,7 @@
         <div class="services-grid">
 
 
-          <div class="service-card">
+          <article class="service-card">
 
             <div class="service-number">
               01
@@ -1145,11 +1226,11 @@
               attention to the details that matter.
             </p>
 
-          </div>
+          </article>
 
 
 
-          <div class="service-card">
+          <article class="service-card">
 
             <div class="service-number">
               02
@@ -1164,11 +1245,11 @@
               business requirements.
             </p>
 
-          </div>
+          </article>
 
 
 
-          <div class="service-card">
+          <article class="service-card">
 
             <div class="service-number">
               03
@@ -1183,10 +1264,11 @@
               remodeling and improvement work.
             </p>
 
-          </div>
+          </article>
 
 
         </div>
+
 
       </div>
 
@@ -1194,9 +1276,9 @@
 
 
 
-    <!-- ========================================
+    <!-- ==================================================
          PROJECTS
-    ======================================== -->
+    ================================================== -->
 
     <section id="projects">
 
@@ -1220,9 +1302,9 @@
 
 
           <p class="section-description">
-            A selection of our construction work. These placeholders can later
-            be replaced with photographs of your completed and ongoing
-            projects.
+            A selection of our construction work. These placeholders will
+            later be replaced with photographs of completed and ongoing
+            Sai JNP Constructions projects.
           </p>
 
 
@@ -1233,7 +1315,7 @@
         <div class="projects-grid">
 
 
-          <div class="project-card">
+          <article class="project-card">
 
             <div class="project-placeholder">
               Project Photo 01
@@ -1251,11 +1333,11 @@
 
             </div>
 
-          </div>
+          </article>
 
 
 
-          <div class="project-card">
+          <article class="project-card">
 
             <div class="project-placeholder">
               Project Photo 02
@@ -1273,11 +1355,11 @@
 
             </div>
 
-          </div>
+          </article>
 
 
 
-          <div class="project-card">
+          <article class="project-card">
 
             <div class="project-placeholder">
               Project Photo 03
@@ -1295,10 +1377,11 @@
 
             </div>
 
-          </div>
+          </article>
 
 
         </div>
+
 
       </div>
 
@@ -1306,9 +1389,9 @@
 
 
 
-    <!-- ========================================
+    <!-- ==================================================
          WHY CHOOSE US
-    ======================================== -->
+    ================================================== -->
 
     <section class="why-us">
 
@@ -1326,8 +1409,8 @@
 
 
         <p class="section-description">
-          We believe good construction starts with clear communication and
-          ends with work we are proud to stand behind.
+          We believe good construction starts with clear communication
+          and ends with work we are proud to stand behind.
         </p>
 
 
@@ -1371,8 +1454,8 @@
             </h3>
 
             <p>
-              A responsible approach from the beginning of the project through
-              completion.
+              A responsible approach from the beginning of the project
+              through completion.
             </p>
 
           </div>
@@ -1394,15 +1477,16 @@
 
         </div>
 
+
       </div>
 
     </section>
 
 
 
-    <!-- ========================================
+    <!-- ==================================================
          CONTACT
-    ======================================== -->
+    ================================================== -->
 
     <section
       class="contact"
@@ -1423,15 +1507,18 @@
 
 
         <p class="section-description">
-          Tell us about your construction requirements and let's discuss how
-          Sai JNP Constructions can help bring your project to life.
+          Tell us about your construction requirements and let's discuss
+          how Sai JNP Constructions can help bring your project to life.
         </p>
+
 
 
         <div class="contact-buttons">
 
 
-          <!-- Replace phone number later -->
+          <!--
+            We will replace this with the actual phone number later.
+          -->
 
           <a
             href="tel:+910000000000"
@@ -1441,10 +1528,12 @@
           </a>
 
 
-          <!-- WhatsApp link will be added later -->
+          <!--
+            We will add the actual WhatsApp number later.
+          -->
 
           <a
-            href="#"
+            href="#contact"
             class="button button-primary"
           >
             WhatsApp
@@ -1452,6 +1541,7 @@
 
 
         </div>
+
 
       </div>
 
@@ -1462,9 +1552,9 @@
 
 
 
-  <!-- ========================================
+  <!-- ==================================================
        FOOTER
-  ======================================== -->
+  ================================================== -->
 
   <footer>
 
@@ -1489,9 +1579,9 @@
 
 
 
-  <!-- ========================================
+  <!-- ==================================================
        JAVASCRIPT
-  ======================================== -->
+  ================================================== -->
 
   <script>
 
@@ -1502,29 +1592,63 @@
       document.getElementById("navigation");
 
 
-    menuButton.addEventListener("click", function () {
+    /* OPEN / CLOSE MOBILE MENU */
 
-      navigation.classList.toggle("active");
+    menuButton.addEventListener(
+      "click",
+      function () {
 
-      const isOpen =
-        navigation.classList.contains("active");
+        navigation.classList.toggle("active");
 
-      menuButton.setAttribute(
-        "aria-expanded",
-        isOpen
-      );
+        const menuIsOpen =
+          navigation.classList.contains("active");
 
-      menuButton.textContent =
-        isOpen ? "✕" : "☰";
 
-    });
+        menuButton.setAttribute(
+          "aria-expanded",
+          menuIsOpen ? "true" : "false"
+        );
 
+
+        menuButton.textContent =
+          menuIsOpen ? "✕" : "☰";
+
+      }
+    );
+
+
+    /* CLOSE MENU AFTER CLICKING A LINK */
 
     document
       .querySelectorAll("#navigation a")
       .forEach(function (link) {
 
-        link.addEventListener("click", function () {
+        link.addEventListener(
+          "click",
+          function () {
+
+            navigation.classList.remove("active");
+
+            menuButton.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+            menuButton.textContent = "☰";
+
+          }
+        );
+
+      });
+
+
+    /* RESET MOBILE MENU IF WINDOW IS RESIZED TO DESKTOP */
+
+    window.addEventListener(
+      "resize",
+      function () {
+
+        if (window.innerWidth > 850) {
 
           navigation.classList.remove("active");
 
@@ -1535,10 +1659,13 @@
 
           menuButton.textContent = "☰";
 
-        });
+        }
 
-      });
+      }
+    );
 
+
+    /* AUTOMATIC COPYRIGHT YEAR */
 
     document.getElementById("year").textContent =
       new Date().getFullYear();
